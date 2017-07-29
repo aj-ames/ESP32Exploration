@@ -1,3 +1,14 @@
+/* Connections:
+ *  RFID --- ESP32
+ *  5V        5V
+ *  Gnd       Gnd
+ *  MISO      GPIO19 (MISO)
+ *  MOSI      GPIO23 (MOSI)
+ *  SCK       GPIO18 (SCK)
+ *  RST       GPIO2(Preferrable)
+ *  SDA       GPIO5 (SS)
+ */
+
 #include<string.h>
 
 #include "MFRC522.h"      //RC522 Library
@@ -6,9 +17,8 @@
 #define USE_SERIAL Serial
 
 
-void dump_byte_array(byte *buffer, byte bufferSize);                    //Function declaration
-#define RST_PIN 2 // RST‐PIN for RC522 ‐ RFID ‐ SPI ‐ Modul GPIO15        
-#define SS_PIN 105 // SDA‐PIN for RC522 ‐ RFID ‐ SPI ‐ Modul GPIO2
+#define RST_PIN 2 //        
+#define SS_PIN 5 // S
 MFRC522 mfrc522(SS_PIN, RST_PIN); 
 
 String Result=" ";
